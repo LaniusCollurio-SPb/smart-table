@@ -23,16 +23,15 @@ export function initTable(settings, onAction) {
     });
 
     // TODO: #1.3 DONE —  обработать события и вызвать onAction()
-    root.container.addEventListener('change', (e) => {
+    root.container.addEventListener('change', () => {
         onAction();
     })
 
-    root.container.addEventListener('reset', (e) => {
+    root.container.addEventListener('reset', () => {
         setTimeout(onAction);
     })
 
     root.container.addEventListener('submit', (e) => {
-        console.log(e.submitter)
         e.preventDefault();
         onAction(e.submitter);
     })
@@ -44,7 +43,7 @@ export function initTable(settings, onAction) {
             Object.keys(item).forEach(key => {
                 if (key in row.elements) {
                     if (row.elements.tagName === 'INPUT' || row.elements.tagName === 'SELECT') {
-                        row.elements[key].value = item[key];
+                        row.elements[key].value = item[key];               
                     } else {
                         row.elements[key].textContent = item[key];
                     }

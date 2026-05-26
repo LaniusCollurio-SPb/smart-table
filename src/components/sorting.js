@@ -7,7 +7,6 @@ export function initSorting(columns) {
 
         if (action && action.name === 'sort') {
             // TODO: DONE #3.1 — запомнить выбранный режим сортировки
-            console.log(action.dataset);
             action.dataset.value = sortMap[action.dataset.value];           // Сохраним и применим как текущее следующее состояние из карты
             field = action.dataset.field;                                   // Информация о сортируемом поле есть также в кнопке
             order = action.dataset.value;                                   // Направление заберём прямо из датасета для точности

@@ -38,7 +38,7 @@ function collectState() {
  * @param {HTMLButtonElement?} action
  */
 function render(action) {
-    let state = collectState(); // состояние полей из таблицы
+    let state = collectState(); // состояние полей из таблицы    
     let result = [...data];     // копируем для последующего изменения
     // TODO: DONE использование
     result = applySearching(result, state, action);
@@ -79,7 +79,7 @@ const applyPagination = initPagination(
     }
 );
 
-const applySearching = initSearching(sampleTable.search.name);
+const applySearching = initSearching('search');
 
 const appRoot = document.querySelector('#app');
 appRoot.appendChild(sampleTable.container);
